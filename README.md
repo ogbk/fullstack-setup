@@ -3,12 +3,13 @@
 ## Tech stack
 
 - React
-- Flow - static typechecking tool
 - Sass - css preprocessor
 - Eslint - code linter
 - Jest & Enzyme - React testing tools
-- Redux
-- React Router
+
+- I did not use the following (app was fairly simple, no need for these):
+  - Redux
+  - React Router
 
 ## App structure
 
