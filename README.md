@@ -36,9 +36,11 @@ App also assumes:
 
 ## Running
 
-- If necessary, change the following default ports in the files below:
-  - server port (4000): `.env`, `server/api/index.js`
-  - client port (8080): `.env`
+- If necessary, change the following default ports in `.port_config.js`:
+  - server [ 4000 ] & client [ 8080 ]
+
+    Alternatively, store this info in an `.env` file.
+    ( Remember `.env` files are generally not committed on git )
 
 - Clone or download the application
 - ```git clone``` or download this repository

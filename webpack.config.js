@@ -1,8 +1,7 @@
 // const webpack = require('webpack');
+const { CLIENT_PORT, SERVER_PORT } = require('./port_config');
 
 require('dotenv').config();
-
-const { CLIENT_PORT, SERVER_PORT } = process.env;
 
 module.exports = {
   entry: `${__dirname}/client/app/components/index.js`,

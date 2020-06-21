@@ -1,6 +1,5 @@
 const express = require('express');
-
-const PORT = 4000;
+const { SERVER_PORT: PORT } = require('../../port_config');
 
 // Setup debug logger
 const debug = require('debug')('welcome-api');
