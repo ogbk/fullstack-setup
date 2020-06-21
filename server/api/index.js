@@ -1,11 +1,12 @@
 const express = require('express');
-const { SERVER_PORT: PORT } = require('../../port_config');
 
 // Setup debug logger
 const debug = require('debug')('welcome-api');
 
 const middleware = require('./middleware');
 const routes = require('./routes');
+
+const { SERVER_PORT: PORT } = require('../../port_config');
 
 // Create express App
 const app = express();

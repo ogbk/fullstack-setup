@@ -48,6 +48,6 @@ const App = () => {
       { !profileActive && profileActive !== undefined && <NotFound /> }
     </div>
   );
-}
+};
 
 export default App;
