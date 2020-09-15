@@ -22,7 +22,10 @@ const Profile = ({ profile, profileId }) => {
 
   return (
     <div className="profile-page">
-      <img src={picture} alt="Profile" />
+      <div className="image-container">
+        <img src={picture} alt="Profile" />
+      </div>
+
       <div className="profile-details">
         <div className="field-key">name</div>
         <div className="field-value">{name}</div>
