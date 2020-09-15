@@ -22,13 +22,16 @@
 
 ## Application
 
-When it starts, user can select one of 2 profiles:
-- mine (Ogbu Olu) -> main purpose of the application
-  - displays a profile picture and some data via `<Profile/>` component
-- another (Chuck Norris) -> 
+When it starts, user can select a profile --> search list is imported from `components/utils/search.json`
+- Ogbu Olu -> 
+  - show profile and picture via `<Profile/>` component
+- Chuck Norris -> 
   - this profile record is deliberately not stored on `profiles.json` [ server data ]
   - So the app handles this missing record, sending an appropriate `<NotFound/>` component
   - (And besides, Chuck Norris is great in judo and brazilian jiu-jitsu, not karate ;))
+- Jet Li ->
+  - profile is stored
+  - profile picture is not stored
 
 App also assumes:
   - server (api) has `assets/img/` folder where the `req.params.id` extracted from express `req.url` corresponds to a particular jpeg image file.

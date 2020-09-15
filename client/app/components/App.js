@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Profile from './Profile';
 import NotFound from './NotFound';
+import searchList from './utils/search.json';
 
 const App = () => {
-  const DEFAULT_PROFILE = 'ogbu_olu';
+  const DEFAULT_PROFILE = searchList[0].id;
 
   const [profileId, setProfileId] = useState(DEFAULT_PROFILE);
   const [profileActive, setProfileActive] = useState(undefined);
@@ -37,8 +38,11 @@ const App = () => {
       <form onSubmit={handleSubmit}>
         <span>Find karate champion: </span>
         <select className="search-column" value={profileId} onChange={handleChange}>
-          <option value="ogbu_olu">Ogbu Olu</option>
-          <option value="chuck_norris">Chuck Norris</option>
+          {
+            searchList.map(({ id, name }) => (
+              <option key={id} value={id}>{name}</option>
+            ))
+          }
         </select>
         <button type="submit" className="click"> GET PROFILE </button>
       </form>

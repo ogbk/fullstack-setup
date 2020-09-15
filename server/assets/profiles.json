@@ -9,5 +9,15 @@
       "Chairman: Madagascar Sea Patrol"
     ],
     "favourite food": "plantain and tangerine (vegetarian)"
+  },
+  {
+    "id": "jet_li",
+    "name": "Jet Li",
+    "title": "Master of the 16 ways of the dragon. Hollwwood superstar.",
+    "belts": [
+      "Strongman: Top tai chi destroyer, class 1994",
+      "Dragon killer: Most feared fist fighter, class 2016"
+    ],
+    "favourite food": "fufu and egusi soup"
   }
 ]
