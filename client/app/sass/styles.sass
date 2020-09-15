@@ -6,13 +6,13 @@ $grey: #808080
 $green: #008000
 $red: #f00
 $black: #000
+$orange: #ffa500
 $yellow: #ff0
 $white: #fff
 $primary-color: #1d7874
 
 $hover-color: #0f0 // green INSTEAD OF orange #ffa500 
 $border-color: #999
-$clicked-row-color: #0f0 // green
 
 .hide
   visibility: hidden
@@ -20,8 +20,21 @@ $clicked-row-color: #0f0 // green
 .good
   color: $green
 
-.error
-  color: $red
+.loading,
+.load-error,
+.load-ok
+  height: .3em
+  margin-bottom: 1em
+  margin-top: 1em
+
+.load-error
+  background-color: $red
+
+.loading
+  background-color: $orange
+
+.load-ok
+  background-color: $green
 
 *
   color: $primary-color
@@ -33,44 +46,43 @@ body
 .click
   cursor: pointer
 
-.hover-row
-  background-color: $hover-color
+.app
+  margin: .5em 3em
 
-.clicked-row
-  background-color: $clicked-row-color
-
-.search-column
-  border: 0
-  border-bottom: 1px solid $blue
-  display: inline-block
-  margin-left: 1em
-  margin-right: 1em
-  outline: none
-
-.profile-page
-  display: flex
-  flex-direction: row
-  width: 100%
-
-  img
+  .search-column
+    border: 0
+    border-bottom: 1px solid $blue
     display: inline-block
-    flex-grow: 1
-    height: auto
-    min-width: 1em
-
-  .profile-details
-    flex-grow: 3
     margin-left: 1em
-    min-width: 20%
+    margin-right: 1em
+    outline: none
 
-.field-key
-  color: $black
+  .profile-page
+    display: flex
+    flex-direction: row
+    width: 100%
 
-.field-value
-  font-size: 1.3em
-  margin-bottom: 2em
+    img
+      display: inline-block
+      flex-grow: 1
+      height: auto
+      min-width: 1em
 
-.field-value-list
-  font-size: 1.3em
-  margin-bottom: .2em
+    .profile-details
+      flex-grow: 3
+      margin-left: 1em
+      min-width: 20%
 
+      .field-key
+        color: $black
+
+      .field-value
+        font-size: 1.3em
+        margin-bottom: 2em
+
+      .field-value-list
+        font-size: 1.3em
+        margin-bottom: .2em
+
+  .no-profile
+    font-size: 2em

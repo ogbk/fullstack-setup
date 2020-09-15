@@ -33,7 +33,7 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div className="app">
 
       <form onSubmit={handleSubmit}>
         <span>Find karate champion: </span>
@@ -47,7 +47,13 @@ const App = () => {
         <button type="submit" className="click"> GET PROFILE </button>
       </form>
 
-      <br />
+      <div className={
+        profileActive === undefined ? 'loading'
+          : profileActive ? 'load-ok'
+            : 'load-error'
+        }
+      />
+
       { profileActive && <Profile profile={profile} profileId={profileId} /> }
       { !profileActive && profileActive !== undefined && <NotFound /> }
     </div>
