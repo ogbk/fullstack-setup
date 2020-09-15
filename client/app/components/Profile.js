@@ -13,7 +13,7 @@ const Profile = ({ profile, profileId }) => {
       };
       fetchData();
     },
-    [],
+    [profile],
   );
 
   const {
