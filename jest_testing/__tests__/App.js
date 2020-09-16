@@ -5,6 +5,7 @@ import { shallow, mount, render } from 'enzyme';
 import App from '../../client/app/components/App';
 import Profile from '../../client/app/components/Profile';
 import NotFound from '../../client/app/components/NotFound';
+import searchList from '../../client/app/components/utils/search.json';
 
 let app;
 
@@ -20,12 +21,20 @@ describe('<App/>', () => {
     expect(app.find('form').childAt(0).text()).toEqual('Find karate champion: ');
 
     expect(app.find('form').childAt(1).type()).toEqual('select');
-    expect(app.find('form').childAt(1).children()).toHaveLength(2);
-    expect(app.find('form').childAt(1).childAt(0).text()).toMatch('Ogbu Olu');
-    expect(app.find('form').childAt(1).childAt(1).text()).toMatch('Chuck Norris');
 
     expect(app.find('form').childAt(2).type()).toEqual('button');
     expect(app.find('form').childAt(2).prop('type')).toEqual('submit');
+
+  });
+
+  test('select field: loads from searchList', () => {
+    expect (searchList.length).toBe(3);
+
+    expect(app.find('form').childAt(1).type()).toEqual('select');
+    expect(app.find('form').childAt(1).children()).toHaveLength(3);
+    expect(app.find('form').childAt(1).childAt(0).text()).toMatch(searchList[0].name);
+    expect(app.find('form').childAt(1).childAt(1).text()).toMatch(searchList[1].name);
+    expect(app.find('form').childAt(1).childAt(2).text()).toMatch(searchList[2].name);
 
   });
 
