@@ -15,12 +15,14 @@ module.exports = {
     },
     compress: true,
     port: CLIENT_PORT,
-    proxy: {
-      '/api/**': {
-        'target': `http://localhost:${SERVER_PORT}`,
-      },
-    },
+    proxy: [
+      {
+        context: ['/api'],
+        target: `http://localhost:${SERVER_PORT}`,
+      }
+    ]
   },
+  mode: 'development',
   module: {
     rules: [
       { test: /\.js$/, use: 'babel-loader', exclude: /(node_modules)/ },
