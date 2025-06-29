@@ -60,12 +60,6 @@ App also assumes:
 - Sass lint `yarn sass-lint`
 
 
-## Static typechecking with Flow
-
-- Stop flow server `yarn flow stop`
-- Start flow server `yarn flow start`
-- Run flow `yarn flow status`
-
 
 ## Testing with jest & enzyme
 
