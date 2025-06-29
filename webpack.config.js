@@ -4,7 +4,7 @@ const { CLIENT_PORT, SERVER_PORT } = require('./port_config');
 require('dotenv').config();
 
 module.exports = {
-  entry: `${__dirname}/client/app/components/index.js`,
+  entry: `${__dirname}/client/app/components/index.tsx`,
   output: {
     path: `${__dirname}/client/public`,
     filename: 'bundle.js',
@@ -25,7 +25,7 @@ module.exports = {
   mode: 'development',
   module: {
     rules: [
-      { test: /\.js$/, use: 'babel-loader', exclude: /(node_modules)/ },
+      { test: /\.[jt]{1}sx?$/, use: 'babel-loader', exclude: /(node_modules)/ },
       { test: /\.css$/i, use: ['style-loader', 'css-loader'], exclude: /(node_modules)/ },
       { test: /\.s[ac]ss$/i, use: ['style-loader', 'css-loader', 'sass-loader'], exclude: /(node_modules)/ },
       { test: /\.(txt|jl)$/i, use: 'raw-loader', exclude: /(node_modules)/ },

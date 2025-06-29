@@ -2,7 +2,7 @@
    "name": "karate-profile",
    "version": "1.0.0",
    "description": "Karate Profile",
-   "main": "index.js",
+   "main": "index.tsx",
    "scripts": {
       "server-install": "cd server && yarn install",
       "client:dev": "webpack-dev-server --hot --open",
