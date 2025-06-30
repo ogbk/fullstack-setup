@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const home = require('./home.ts');
+const home = require('./home');
 
 const routes = Router();
 

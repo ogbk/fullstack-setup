@@ -3,8 +3,8 @@ const express = require('express');
 // Setup debug logger
 const debug = require('debug')('welcome-api');
 
-const middleware = require('./middleware/index.ts');
-const routes = require('./routes/index.ts');
+const middleware = require('./middleware/index');
+const routes = require('./routes/index');
 
 const { SERVER_PORT: PORT } = require('../../port_config');
 
