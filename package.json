@@ -7,6 +7,7 @@
       "server-install": "cd server && yarn install",
       "client:dev": "webpack-dev-server --hot --open",
       "client:prod": "webpack",
+      "setup": "yarn install && cd server && yarn install",
       "start": "concurrently \"npm run client:dev\" \"cd server && npm run server:dev\"",
       "sass-lint": "sass-lint client/app/sass/styles.sass --verbose -q",
       "eslint": "eslint client/app/ server/api/",
