@@ -1,14 +1,17 @@
 const { Router } = require('express');
+import type {Request, Response} from 'express';
+import Profiles = require('../types');
+
 const path = require('path');
 const fs = require('fs');
 
 const home = Router();
 
-const PROFILES = require('../../assets/profiles.json');
+const PROFILES: Profiles[] = require('../../assets/profiles.json');
 
-home.get('/:id', (request, response) => {
+home.get('/:id', (request: Request, response: Response) => {
   const { id: inputId } = request.params;
-  const profile = PROFILES.find(({ id }) => (id === inputId));
+  const profile = PROFILES.find(({id}) => (id === inputId));
 
   if (!profile) {
     return (response.status(404).send('Profile with given ID not found'));
@@ -17,7 +20,7 @@ home.get('/:id', (request, response) => {
   return (response.send(profile));
 });
 
-home.get('/img/:id', (request, response) => {
+home.get('/img/:id', (request: Request, response: Response) => {
   const { id: inputId } = request.params;
   const image_name = path.resolve(
     __dirname,
