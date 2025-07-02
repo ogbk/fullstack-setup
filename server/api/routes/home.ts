@@ -1,6 +1,6 @@
 const { Router } = require('express');
 import type {Request, Response} from 'express';
-import Profiles = require('../types');
+import Profiles = require('../../../types/profiles');
 
 const path = require('path');
 const fs = require('fs');

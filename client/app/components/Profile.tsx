@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import Profiles = require('../../../types/profiles.ts');
 
-const Profile = ({ profile, profileId }) => {
-  const [picture, setPicture] = useState(undefined);
+const Profile = ({ profile, profileId }:{profile: Profiles, profileId: string}) => {
+  const [picture, setPicture] = useState<string>();
 
   useEffect(
     () => {

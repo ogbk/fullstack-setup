@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
 import Profile from './Profile.tsx';
 import NotFound from './NotFound.tsx';
-import searchList from '../utils/search.json';
+import Search = require('../../../types/search.ts');
+import Profiles = require('../../../types/profiles.ts');
+//import searchList: Search[] from '../../../types/search.ts';
+
+const searchList: Search[] = require ('../utils/search.json');
 
 const App = () => {
   const DEFAULT_PROFILE = searchList[0].id;
 
   const [profileId, setProfileId] = useState(DEFAULT_PROFILE);
-  const [profileActive, setProfileActive] = useState(undefined);
-  const [profile, setProfile] = useState(undefined);
+  const [profileActive, setProfileActive] = useState<boolean>();
+  const [profile, setProfile] = useState<Profiles>();
 
-  const handleChange = ({ target: { value } }) => {
+  const handleChange = ({ target: { value } }:React.ChangeEvent<HTMLSelectElement>) => {
     setProfileId(value);
   };
 
-  const handleSubmit = async (evt) => {
+  const handleSubmit = async (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
 
     try {
@@ -54,7 +58,7 @@ const App = () => {
         }
       />
 
-      { profileActive && <Profile profile={profile} profileId={profileId} /> }
+      { profileActive && profile && <Profile profile={profile} profileId={profileId} /> }
       { !profileActive && profileActive !== undefined && <NotFound /> }
     </div>
   );
