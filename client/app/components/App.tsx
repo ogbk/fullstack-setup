@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Profile from './Profile.tsx';
 import NotFound from './NotFound.tsx';
-import searchList from './utils/search.json';
+import searchList from '../utils/search.json';
 
 const App = () => {
   const DEFAULT_PROFILE = searchList[0].id;
