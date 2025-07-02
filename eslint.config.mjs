@@ -6,8 +6,9 @@ export default tseslint.config({
     eslint.configs.recommended,
     tseslint.configs.recommended,
   ],
-  ignores: ['server/**/*.js'],
+  ignores: ['client/app/components/*.js', 'server/**/*.js'],
   rules: {
+    "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-require-imports": "off"
   }
