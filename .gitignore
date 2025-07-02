@@ -12,7 +12,8 @@ node_modules
 /build
 
 # js files compiled from ts
-server/**/*.js 
+server/**/*.js
+client/app/components/*.js
 
 # misc
 .DS_Store
