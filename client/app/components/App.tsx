@@ -27,7 +27,7 @@ const App = () => {
       } else {
         setProfileActive(false);
       }
-    } catch (err) {
+    } catch (err) {   //eslint-disable-line
       setProfileActive(false);
     }
   };
