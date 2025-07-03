@@ -6,7 +6,12 @@ export default tseslint.config({
     eslint.configs.recommended,
     tseslint.configs.recommended,
   ],
-  ignores: ['client/app/components/*.js', 'server/**/*.js'],
+  ignores: [
+    'webpack.config.js',
+    'html5shiv.min.js'
+    'client/app/components/*.js',
+    'server/**/*.js'
+  ],
   rules: {
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-explicit-any": "off",
