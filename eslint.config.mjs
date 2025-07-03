@@ -8,7 +8,7 @@ export default tseslint.config({
   ],
   ignores: [
     'webpack.config.js',
-    'html5shiv.min.js'
+    'html5shiv.min.js',
     'client/app/components/*.js',
     'server/**/*.js'
   ],
