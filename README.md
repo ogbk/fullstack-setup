@@ -7,9 +7,6 @@
 - Eslint - code linter
 - Jest & Enzyme - React testing tools
 
-- I did not use the following (app was fairly simple, no need for these):
-  - Redux
-  - React Router
 
 ## App structure
 
@@ -40,7 +37,13 @@ App also assumes:
 
 ## Running
 
-- If necessary, change the following default ports in `.port_config.js`:
+- Make sure yarn is installed:
+  
+  Install yarn ```npm i -g yarn``` 
+  
+  Check yarn version to make sure it's installed: ```yarn -v```
+  
+- If necessary, change the following default ports in `./port_config.js`:
   - server [ 4000 ] & client [ 8080 ]
 
     Alternatively, store this info in an `.env` file.
@@ -49,18 +52,22 @@ App also assumes:
 - Clone or download the application
 - ```git clone``` or download this repository
 - ```cd ____``` or ```cd ____-master```
-- ```yarn install``` to download required packages (client-side)
-- ```yarn server-install``` to download required packages (server-side)
+- ```yarn setup``` to download required packages (client-side & server-side)
 - ```yarn start``` to run the application ==> it opens up a new browser
 
 
 ## Linting
 
-- ESLint `yarn eslint`
-- Sass lint `yarn sass-lint`
+- ESLint `yarn eslint` or `npm run eslint`
+- Sass lint `yarn sass-lint` or `npm run sass-lint`
 
 
 
 ## Testing with jest & enzyme
 
-- test: `yarn test`
+- test: `yarn test` or `npm run test`
+
+
+## Typechecking with typescript
+
+- typecheck: `yarn tsc` or `npx tsc`
