@@ -31,7 +31,7 @@ const App = () => {
       } else {
         setProfileActive(false);
       }
-    } catch (err) {   //eslint-disable-line
+    } catch {
       setProfileActive(false);
     }
   };
