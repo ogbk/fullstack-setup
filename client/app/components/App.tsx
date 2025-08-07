@@ -11,8 +11,8 @@ const App = () => {
   const DEFAULT_PROFILE = searchList[0].id;
 
   const [profileId, setProfileId] = useState(DEFAULT_PROFILE);
-  const [profileActive, setProfileActive] = useState<boolean>();
   const [profile, setProfile] = useState<Profiles>();
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleChange = ({ target: { value } }:React.ChangeEvent<HTMLSelectElement>) => {
     setProfileId(value);
@@ -20,6 +20,7 @@ const App = () => {
 
   const handleSubmit = async (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
+    setIsLoading (true);
 
     try {
       const res = await fetch(`/api/${profileId}`);
@@ -27,12 +28,13 @@ const App = () => {
       if (res.ok && res.status === 200) {
         const json = await res.json();
         setProfile(json);
-        setProfileActive(true);
       } else {
-        setProfileActive(false);
+        throw new Error('fetch status - not 200');
       }
     } catch {
-      setProfileActive(false);
+      setProfile(undefined);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -52,14 +54,13 @@ const App = () => {
       </form>
 
       <div className={
-        profileActive === undefined ? 'loading'
-          : profileActive ? 'load-ok'
-            : 'load-error'
+        isLoading ? 'loading' : 
+          profile ? 'load-ok' : 'load-error'
         }
       />
 
-      { profileActive && profile && <Profile profile={profile} profileId={profileId} /> }
-      { !profileActive && profileActive !== undefined && <NotFound /> }
+      { !isLoading && profile && <Profile profile={profile} profileId={profileId} /> }
+      { !isLoading && !profile && <NotFound /> }
     </div>
   );
 };
